@@ -61,10 +61,15 @@ string yes_or_no(ref int[] odd_days, ref int[] even_days){
 
 Console.Write("input:\n");
 int days_amount = input("input days amount: ");
+while (days_amount < 1 || days_amount > 100){
+    days_amount = input("input valid value: 0 < days amount < 101: ");
+}
 int[] days = randomArray(length: days_amount, min: 1, max: 32);
 int[] odd_days = even_or_odd_days(ref days, need_odd: true);
 int[] even_days = even_or_odd_days(ref days, need_odd: false);
 printArray(ref days);
+
+
 Console.Write("\noutput:\n");
 printArray(ref odd_days);
 printArray(ref even_days);
